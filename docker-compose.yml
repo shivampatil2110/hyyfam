@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.1
+    container_name: hyyfam-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: hyfam_db
+      MYSQL_USER: hyfam_user
+      MYSQL_PASSWORD: hyfam_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hyyfam-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    ports:
+      - "6300:6300"
+    depends_on:
+      - db
+
+  frontend:
+    image: shivampatil821/hyyfam-frontend:latest
+    container_name: hyyfam-frontend
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env.local
+    ports:
+      - "3152:3152"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
