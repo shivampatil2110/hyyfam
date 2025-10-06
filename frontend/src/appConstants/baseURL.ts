@@ -1,0 +1,5 @@
+export const BASE_URL = "http://localhost:6300/api"
+export const ADMIN_PANEL_URL = "https://team.hyyfam.com/api"
+export const CDN_URL = "https://cdn.hyyfam.com"
+export const WEBSITE_URL = "https://hyyfam.com"
+export const INSTA_AUTH_URL = "https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1749835512284494&redirect_uri=https://www.hyyfam.com/api/instagram/instagramAuth&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments&web_only=true&auth_type=rerequest"

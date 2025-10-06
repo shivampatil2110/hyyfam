@@ -1,0 +1,100 @@
+@keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .scroll-animation {
+    animation: scroll 50s linear infinite;
+  }
+  
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px) translateY(-1px); }
+  40% { transform: translateX(3px) translateY(1px); }
+  60% { transform: translateX(-3px) translateY(-1px); }
+  80% { transform: translateX(3px) translateY(1px); }
+}
+
+.shake-animation {
+  animation: shake 2s infinite;
+}
+
+
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0) rotate(-1.866deg) scale(0.65);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg) rotate(-1.866deg) scale(0.65);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg) rotate(-1.866deg) scale(0.65);
+  }
+}
+
+.flip-animation {
+  animation: flip 2s infinite ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+/* Media query adaptations */
+@media (min-width: 768px) {
+  @keyframes flip-md {
+    0% {
+      transform: perspective(400px) rotateY(0) rotate(-1.866deg) scale(0.65);
+    }
+    50% {
+      transform: perspective(400px) rotateY(180deg) rotate(-1.866deg) scale(0.65);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg) rotate(-1.866deg) scale(0.65);
+    }
+  }
+  
+  .flip-animation {
+    animation: flip-md 2s infinite ease-in-out;
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes flip-lg {
+    0% {
+      transform: perspective(400px) rotateY(0) rotate(-1.866deg) scale(0.8);
+    }
+    50% {
+      transform: perspective(400px) rotateY(180deg) rotate(-1.866deg) scale(0.8);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg) rotate(-1.866deg) scale(0.8);
+    }
+  }
+  
+  .flip-animation {
+    animation: flip-lg 2s infinite ease-in-out;
+  }
+}
+
+@media (min-width: 1280px) {
+  @keyframes flip-xl {
+    0% {
+      transform: perspective(400px) rotateY(0) rotate(-1.866deg) scale(1);
+    }
+    50% {
+      transform: perspective(400px) rotateY(180deg) rotate(-1.866deg) scale(1);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg) rotate(-1.866deg) scale(1);
+    }
+  }
+  
+  .flip-animation {
+    animation: flip-xl 2s infinite ease-in-out;
+  }
+}

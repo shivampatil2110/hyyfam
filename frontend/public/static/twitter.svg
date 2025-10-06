@@ -1,0 +1,23 @@
+<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_1087_2022)">
+<rect x="0.9375" width="51" height="51" rx="20" fill="white"/>
+<rect x="1.1875" y="0.25" width="50.5" height="50.5" rx="19.75" stroke="black" stroke-width="0.5"/>
+</g>
+<g clip-path="url(#clip0_1087_2022)">
+<path d="M42.375 18.6537C41.3008 19.107 40.1613 19.4046 38.9946 19.5365C40.2099 18.8426 41.143 17.7438 41.5824 16.4345C40.4271 17.0876 39.1631 17.5478 37.8451 17.7951C36.7714 16.7054 35.2419 16.0244 33.549 16.0244C30.2986 16.0244 27.6632 18.5349 27.6632 21.6314C27.6632 22.0709 27.7154 22.4988 27.8156 22.9093C22.9242 22.6754 18.5875 20.4431 15.6845 17.0508C15.178 17.8789 14.8878 18.8422 14.8878 19.8696C14.8878 21.815 15.9269 23.5311 17.5061 24.5367C16.5714 24.5088 15.6574 24.2683 14.8402 23.8353C14.8398 23.8588 14.8398 23.8823 14.8398 23.9058C14.8398 26.6225 16.8686 28.8888 19.5609 29.4039C18.6942 29.6285 17.7851 29.6613 16.9031 29.5C17.652 31.7276 19.8256 33.3486 22.401 33.394C20.3867 34.8978 17.8489 35.7942 15.0915 35.7942C14.6164 35.7942 14.148 35.7677 13.6875 35.7159C16.2921 37.3068 19.3858 38.2351 22.7095 38.2351C33.5353 38.2351 39.4552 29.6911 39.4552 22.2816C39.4552 22.0384 39.4495 21.7966 39.4381 21.5562C40.5904 20.7627 41.5849 19.7798 42.375 18.6537" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_d_1087_2022" x="0.9375" y="0" width="51" height="53" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1087_2022"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1087_2022" result="shape"/>
+</filter>
+<clipPath id="clip0_1087_2022">
+<rect width="28.6875" height="22.3125" fill="white" transform="translate(13.6875 15.9375)"/>
+</clipPath>
+</defs>
+</svg>
