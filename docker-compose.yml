@@ -1,19 +1,31 @@
 version: '3.9'
 
 services:
-  db:
-    image: mysql:8.1
+  
+  mysql:
+    image: mysql:8.0
     container_name: hyyfam-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: hyfam_db
-      MYSQL_USER: hyfam_user
-      MYSQL_PASSWORD: hyfam_pass
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: hyyfam
+      MYSQL_USER: hyyfam_user
+      MYSQL_PASSWORD: hyyfam_pass
     ports:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./backend/run-init.sh:/docker-entrypoint-initdb.d/run-init.sh
+    command: ["/bin/bash", "/mysql-init.sh"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - hyyfam-network
 
   backend:
     build:
@@ -25,11 +37,13 @@ services:
       - ./backend/.env
     ports:
       - "6300:6300"
-    depends_on:
-      - db
+    networks:
+      - hyyfam-network
 
   frontend:
-    image: shivampatil821/hyyfam-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: hyyfam-frontend
     restart: unless-stopped
     env_file:
@@ -37,7 +51,15 @@ services:
     ports:
       - "3152:3152"
     depends_on:
-      - backend
+      backend:
+        condition: service_started
+    networks:
+      - hyyfam-network
 
 volumes:
   db_data:
+    driver: local
+
+networks:
+  hyyfam-network:
+    driver: bridge

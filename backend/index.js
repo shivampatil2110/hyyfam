@@ -14,7 +14,7 @@ require('./logger')
 
 const PORT = process.env.PORT || 6300
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://grateful-lately-feline.ngrok-free.app"],
+    origin: ["http://localhost:3152", "https://grateful-lately-feline.ngrok-free.app"],
     method: ["GET", "POST"],
     credentials: true,
 };
